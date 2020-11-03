@@ -1,5 +1,5 @@
 import React from "react";
-import "./collections-overview.styles.scss";
+import { CollectionsOverviewContainer } from "./collections-overview.style";
 
 import CollectionsPreview from "../../components/collection-preview/collection-preview.components";
 
@@ -10,11 +10,11 @@ import { selectCollectionForPreview } from "../../redux/shop/shop.selectors";
 
 const CollectionsOverview = ({ collections }) => {
   return (
-    <div className="collections-overview">
+    <CollectionsOverviewContainer>
       {collections.map(({ id, ...otherPrevCollection }) => (
         <CollectionsPreview key={id} {...otherPrevCollection} />
       ))}
-    </div>
+    </CollectionsOverviewContainer>
   );
 };
 
