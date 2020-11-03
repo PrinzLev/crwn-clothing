@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import StripeCheckoutButton from "../../components/stripe-button/stripe-button.components";
-
 export const CheckoutPageContainer = styled.div`
   width: 55%;
   min-height: 90vh;
@@ -9,6 +7,11 @@ export const CheckoutPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+
+  button {
+    margin-left: auto;
+    margin-top: 50px;
+  }
 `;
 
 export const CheckoutHeaderContainer = styled.div`
@@ -39,9 +42,4 @@ export const TestWarningContainer = styled.div`
   margin-top: 40px;
   font-size: 24px;
   color: red;
-`;
-
-export const StripeCheckoutButtonStyled = styled(StripeCheckoutButton)`
-  margin-left: auto;
-  margin-top: 50px;
 `;

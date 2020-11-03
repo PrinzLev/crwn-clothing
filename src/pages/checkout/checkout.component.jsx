@@ -1,12 +1,13 @@
 import React from "react";
 
+import StripeCheckoutButton from "../../components/stripe-button/stripe-button.components";
+
 import {
   CheckoutPageContainer,
   CheckoutHeaderContainer,
   HeaderBlockStyle,
   TotalContainer,
   TestWarningContainer,
-  StripeCheckoutButtonStyled,
 } from "./checkout.style";
 
 import { connect } from "react-redux";
@@ -37,7 +38,7 @@ const CheckouPage = ({ cartItems, total }) => {
         <br />
         4242 4242 4242 4242 | Exp: 11/21 | CVV: 123
       </TestWarningContainer>
-      <StripeCheckoutButtonStyled price={total} />
+      <StripeCheckoutButton price={total} />
     </CheckoutPageContainer>
   );
 };
