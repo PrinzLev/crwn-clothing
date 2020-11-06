@@ -11,7 +11,7 @@ import CollectionItem from "../collection-items/collection-items.components";
 const CollectionsPreview = ({ title, items }) => {
   return (
     <CollectionPreviewContainer className="collection-preview">
-      <TitleStyles>{title}</TitleStyles>
+      <TitleStyles to={`shop/${title.toLowerCase()}`}>{title}</TitleStyles>
       <PreviewItemContainer>
         {items
           .filter((item, idx) => idx < 4)
