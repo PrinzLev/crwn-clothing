@@ -1,10 +1,13 @@
 import React from "react";
 import FormInput from "../form-input/form-input.components";
 import CustomButton from "../custom-button/custom-button.components";
-
+import { connect } from "react-redux";
 import { SignInContainer, TitleStyle, ButtonContainer } from "./sign-in.styles";
 
-import { auth, signInWithGoogle } from "../../firebase/firebase.util";
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../redux/user/user.action";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -14,26 +17,27 @@ class SignIn extends React.Component {
       password: "",
     };
   }
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-  handleClick = async (event) => {
+
+  handleSubmit = async (event) => {
     event.preventDefault();
+    const { emailSignInStart } = this.props;
     const { email, password } = this.state;
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: "", password: "" });
-    } catch (error) {
-      console.log(error);
-    }
+
+    emailSignInStart(email, password);
   };
+
   render() {
+    const { googleSignInStart } = this.props;
     return (
       <SignInContainer>
         <TitleStyle>I already have an account.</TitleStyle>
         <span>Enter your email and password.</span>
-        <form onSubmit={this.handleClick}>
+        <form onSubmit={this.handleSubmit}>
           <FormInput
             type="email"
             handleChange={this.handleChange}
@@ -51,12 +55,10 @@ class SignIn extends React.Component {
             required
           />
           <ButtonContainer>
-            <CustomButton type="submit" value="Submit Form">
-              Sign In
-            </CustomButton>
+            <CustomButton type="submit">Sign In</CustomButton>
             <CustomButton
               type="button"
-              onClick={signInWithGoogle}
+              onClick={googleSignInStart}
               isGoogleSignIn
             >
               Sign In With Google
@@ -67,5 +69,10 @@ class SignIn extends React.Component {
     );
   }
 }
+const mapDispatchToProps = (dispatch) => ({
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password })),
+});
 
-export default SignIn;
+export default connect(null, mapDispatchToProps)(SignIn);
