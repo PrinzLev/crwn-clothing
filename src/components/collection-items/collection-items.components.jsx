@@ -25,7 +25,6 @@ const CollectionItem = ({ item, addItem }) => {
       </CollectionFooterContainer>
       <CustomButtonStyles onClick={() => addItem(item)} inverted>
         ADD TO CART
-        {console.log(item)}
       </CustomButtonStyles>
     </CollectionItemContainer>
   );
