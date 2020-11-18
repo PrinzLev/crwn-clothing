@@ -12,7 +12,7 @@ export const CheckoutPageContainer = styled.div`
     margin-left: auto;
     margin-top: 50px;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     margin: 20px auto 0;
     width: 70%;
     button {
@@ -28,7 +28,7 @@ export const CheckoutHeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     width: 100%;
     padding: 3px 0;
   }
@@ -40,7 +40,7 @@ export const HeaderBlockStyle = styled.span`
   &:last-child {
     width: 8%;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     font-size: 12px;
     width: 25%;
     &:last-child {
@@ -53,7 +53,7 @@ export const TotalContainer = styled.div`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     margin-top: 18px;
     font-size: 20px;
   }
@@ -64,7 +64,7 @@ export const TestWarningContainer = styled.div`
   margin-top: 40px;
   font-size: 24px;
   color: red;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     margin-top: 24px;
     font-size: 18px;
   }

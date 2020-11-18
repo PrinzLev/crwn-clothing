@@ -9,6 +9,10 @@ const shrinkLabel = css`
   top: -14px;
   font-size: 12px;
   color: ${color.main};
+  @media screen and (max-width: 800px) {
+    top: -7px;
+    font-size: 8px;
+  }
 `;
 
 export const GroupContainer = styled.div`
@@ -17,6 +21,9 @@ export const GroupContainer = styled.div`
 
   input[type="password"] {
     letter-spacing: 0.3em;
+  }
+  @media screen and (max-width: 800px) {
+    margin: 15px 0;
   }
 `;
 
@@ -40,6 +47,11 @@ export const FormInputStyle = styled.input`
   &:focus ~ label {
     ${shrinkLabel};
   }
+  @media screen and (max-width: 800px) {
+    font-size: 10px;
+    padding: 6px 6px 6px 3px;
+    margin: 13px 0;
+  }
 `;
 
 export const FormInputLabel = styled.label`
@@ -54,5 +66,10 @@ export const FormInputLabel = styled.label`
 
   &.shrink {
     ${shrinkLabel};
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 10px;
+    left: 3px;
+    top: 7px;
   }
 `;
